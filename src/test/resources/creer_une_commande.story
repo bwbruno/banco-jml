@@ -1,7 +1,7 @@
 En tant que gestionnaire,
 
 Etant donné que le client Danone (SIRET: 55203253400646) existe
-Quand je crée sa commande de nom : “Produits frais de la région Limousin tous les mois” (paramètres, support, format …) paramètres obligatoires: type de produit, périodicité, etc.
+Quand je crée sa commande de sobrenome : “Produits frais de la région Limousin tous les mois” (paramètres, support, format …) paramètres obligatoires: type de produit, périodicité, etc.
 Alors la commande est CREEE avec un identifiant généré
 Quand je valide la commande
 Alors la commande est validée
