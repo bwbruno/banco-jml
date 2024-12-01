@@ -1,0 +1,24 @@
+Narrativa:
+
+Como um titular de cartão emitido por um banco francês
+Quero fazer um saque de dinheiro na França
+Para obter dinheiro rapidamente a qualquer hora
+
+Cenário: saque com cartão de pagamento no caixa eletrônico - sucesso
+
+Dado que o titular Jérémie Grodziski possui o cartão nº 1234 5678 9012 3456 em EUR e um débito de 0 EUR associado à conta bancária 300003035940005152434412 com um saldo de 1000 € no banco Société Générale
+Quando o titular realiza um saque de 100 EUR no caixa eletrônico de Paris_Pelletier
+Então ele recebe 100 € em espécie
+Então o caixa eletrônico emite o comprovante resumido
+Então o saldo da conta é de 900 €
+
+Cenário: saque com cartão de pagamento no caixa eletrônico - saldo insuficiente
+
+Dado que o titular Jérémie Grodziski possui o cartão nº 1234 5678 9012 3456 em EUR e um débito de 0 EUR associado à conta bancária 300003035940005152434412 com um saldo de 50 € no banco Société Générale
+Quando o titular realiza um saque de 100 EUR no caixa eletrônico de Paris_Pelletier
+Então ele recebe a mensagem "saldo insuficiente"
+Então o saldo da conta é de 50 €
+
+Cenário: saque com cartão de pagamento no caixa eletrônico - código incorreto
+
+Cenário: saque com cartão de pagamento no caixa eletrônico - cartão inválido

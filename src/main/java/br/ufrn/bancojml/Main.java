@@ -1,17 +1,24 @@
 package br.ufrn.bancojml;
 
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+import br.ufrn.bancojml.dominio.*;
+
+import java.util.Date;
+
 public class Main {
     public static void main(String[] args) {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            System.out.println("i = " + i);
-        }
+        String nome = "Jérémie", sobrenome = "Grodziski";
+        String numeroCartao  = "1234 5678 9012 3456";
+        String moedaCartao = "EUR";
+        String numeroConta = "300003035940005152434412";
+        Integer saldo = 1000;
+        String nomeBanco = "Société Générale";
+
+        Titular titular = new Titular(nome, sobrenome);
+        Conta conta = new Conta(new Montante(saldo),numeroConta);
+        long doisAnosDepois = System.currentTimeMillis()+(1000*60*60*24*365*2);
+        Cartao cartao = new Cartao( new NumeroCartao(numeroCartao), new Date(doisAnosDepois),nome + " " + sobrenome, conta);
+        Banco banco = new Banco(nomeBanco);
+
     }
 }

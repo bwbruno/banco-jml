@@ -2,17 +2,16 @@ package br.ufrn.bancojml.dominio;
 
 /**
  * Created by jeremiegrodziski
- * TPA abreviação de "Terminal de Pagamento Automático"
  */
-public class TPA {
+public class CaixaEletronico {
     private Localizacao localizacao;
     private static boolean ticketEmitido = true;
 
-    public TPA(String localizacao) {
+    public CaixaEletronico(String localizacao) {
         this.localizacao = new Localizacao(localizacao);
     }
 
-    public static boolean isTicketEmitido() {
+    public static boolean isComprovanteEmitido() {
         return ticketEmitido;
     }
 

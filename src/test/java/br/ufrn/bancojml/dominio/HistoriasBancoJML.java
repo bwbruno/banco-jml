@@ -12,7 +12,9 @@ import org.jbehave.core.junit.JUnitStories;
 import org.jbehave.core.reporters.FilePrintStreamFactory;
 import org.jbehave.core.reporters.PrintStreamStepdocReporter;
 import org.jbehave.core.reporters.StoryReporterBuilder;
-import org.jbehave.core.steps.*;
+import org.jbehave.core.steps.CandidateSteps;
+import org.jbehave.core.steps.InjectableStepsFactory;
+import org.jbehave.core.steps.InstanceStepsFactory;
 
 import java.net.URL;
 import java.util.List;
@@ -20,12 +22,9 @@ import java.util.Locale;
 import java.util.Properties;
 
 import static org.jbehave.core.io.CodeLocations.codeLocationFromClass;
-import static org.jbehave.core.reporters.Format.CONSOLE;
-import static org.jbehave.core.reporters.Format.HTML;
-import static org.jbehave.core.reporters.Format.TXT;
-import static org.jbehave.core.reporters.Format.XML;
+import static org.jbehave.core.reporters.Format.*;
 
-public class DDDBankStories extends JUnitStories {
+public class HistoriasBancoJML extends JUnitStories {
 
     @Override
     public Configuration configuration() {
@@ -54,7 +53,7 @@ public class DDDBankStories extends JUnitStories {
 
     public InjectableStepsFactory stepsFactory() {
         return new InstanceStepsFactory(configuration(),
-                new CreditCardSteps());
+                new PassosCartaoDeCredito());
     }
 
     public List<CandidateSteps> candidateSteps() {
@@ -63,10 +62,8 @@ public class DDDBankStories extends JUnitStories {
     }
 
     public List<String> storyPaths() {
-//        var stories = new StoryFinder().findPaths(codeLocationFromClass(this.getClass()),
-//                "**/*.story", "**/excluded*.story");
         List<String> stories = new StoryFinder().findPaths(codeLocationFromClass(this.getClass()),
-                storyPattern(), "**/excluded*.story");
+                storyPattern(), "**/excluida*.historia");
         return stories;
     }
 
@@ -75,7 +72,7 @@ public class DDDBankStories extends JUnitStories {
     }
 
     protected String storyPattern() {
-        return "**/effectuer_un_retrait.story";
+        return "**/*.historia";
     }
 
 }

@@ -60,10 +60,11 @@ public class Cartao implements Entidade {
         @Override
         public boolean ehAutorizado() {
             boolean ehAutorizado = montanteRetirada.getValor().compareTo(saldoConta.getValor()) < 0;
-            if (!ehAutorizado) throw new RuntimeException("O montante da retirada "
-                    + montanteRetirada.getValor()
-                    +" deve ser inferior ao saldo da conta "
-                    + saldoConta.getValor());
+//            if (!ehAutorizado) throw new RuntimeException("O montante da retirada "
+//                    + montanteRetirada.getValor()
+//                    +" deve ser inferior ao saldo da conta "
+//                    + saldoConta.getValor());
+            if (!ehAutorizado) throw new RuntimeException("saldo insuficiente");
             return ehAutorizado;
         }
     }

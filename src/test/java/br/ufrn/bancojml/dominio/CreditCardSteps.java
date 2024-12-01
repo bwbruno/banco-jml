@@ -18,7 +18,7 @@ public class CreditCardSteps {
     Cartao carte;
     Banco banque;
     Conta compte;
-    TPA dab;
+    CaixaEletronico dab;
     Retirada retrait;
     RuntimeException re;
 
@@ -26,7 +26,14 @@ public class CreditCardSteps {
     private Pagamento paiement;
 
     @Given("le porteur $prenom $nom possède la carte no $noCarte en $deviseCarte et un débit de $debit $deviseCarte associé au compte bancaire $noCompte avec un solde de $solde € à la banque $nomBanque")
-    public void givenLePorteurPossedeLaCarte(@Named("prenom") String prenom, @Named("nom") String nom, @Named("noCarte") String noCarte,@Named("deviseCarte") String deviseCarte,@Named("debit") Integer debit, @Named("noCompte") String noCompte,@Named("solde") Integer solde, @Named("nomBanque") String nomBanque) {
+    public void givenLePorteurPossedeLaCarte(@Named("prenom") String prenom,
+                                             @Named("nom") String nom,
+                                             @Named("noCarte") String noCarte,
+                                             @Named("deviseCarte") String deviseCarte,
+                                             @Named("debit") Integer debit,
+                                             @Named("noCompte") String noCompte,
+                                             @Named("solde") Integer solde,
+                                             @Named("nomBanque") String nomBanque) {
         titular = new Titular(prenom, nom);
         compte = new Conta(new Montante(solde),noCompte);
         long dansDeuxAns = System.currentTimeMillis()+(1000*60*60*24*365*2);
@@ -46,7 +53,7 @@ public class CreditCardSteps {
 
     @When("le porteur effectue un retrait de $retrait EUR au DAB de $localisation")
     public void whenLePorteurEffectueUnRetrait(Integer retrait, String localisation) {
-        dab = new TPA(localisation);
+        dab = new CaixaEletronico(localisation);
         try {
             this.retrait = dab.retirar(carte, new Montante(retrait));
         } catch (RuntimeException re){
@@ -101,7 +108,7 @@ public class CreditCardSteps {
 
     @Then("le DAB émet le ticket récapitulatif")
     public void thenLeDABEmetLeTicketRecapitulatif() {
-        Assert.assertTrue(TPA.isTicketEmitido());
+        Assert.assertTrue(CaixaEletronico.isComprovanteEmitido());
     }
 
 
