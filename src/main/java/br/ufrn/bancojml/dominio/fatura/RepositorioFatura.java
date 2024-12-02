@@ -1,7 +1,7 @@
 package br.ufrn.bancojml.dominio.fatura;
 
 /**
- *
+ * Created by jeremiegrodziski
  */
 public interface RepositorioFatura {
 

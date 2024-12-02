@@ -4,7 +4,7 @@ import java.text.MessageFormat;
 import java.util.Arrays;
 
 /**
- *
+ * Created by jeremiegrodziski
  */
 public class BaseException extends RuntimeException {
 

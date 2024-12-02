@@ -1,0 +1,15 @@
+Narrativa:
+
+Como Gestor
+Eu quero criar um cliente
+Para poder processar seu pedido
+
+Cenário: criação do cliente - nominal
+
+Dado que o estabelecimento com o nº SIRET 1234 5678 9012 34 existe no SIREN3
+Dado que o cliente com o nº SIRET 1234 5678 9012 34 não existe no SYRACUSE
+Quando o gestor insere o número SIREN e consulta o SIREN3
+Então o sistema exibe os dados: tipo: "SIRETISE", RazãoSocialCurta: "DANONE", RazãoSocialLonga: "DANONE", Endereço: "", CódigoApen, CódigoApet, StatusJurídico: "12", tipoComercial: ""
+Quando o gestor valida a criação do cliente
+Então o cliente é verificado como inexistente
+Então o cliente é criado

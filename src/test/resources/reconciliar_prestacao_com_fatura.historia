@@ -1,0 +1,4 @@
+Cenário: reconciliação de fatura - sucesso
+Dado que a fatura 001 existe no sistema
+Quando eu reconciliar a prestação do tipo "Dépannage Auto" ref ABC com a fatura
+Então o estado da fatura é RECONCILIADA

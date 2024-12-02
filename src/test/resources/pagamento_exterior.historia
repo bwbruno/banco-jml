@@ -1,0 +1,20 @@
+Narrativa: Como portador de um cartão emitido por um banco francês
+Eu quero fazer um pagamento no exterior
+Para pagar facilmente no exterior
+
+Cenário: pagamento - sucesso
+
+Dado que o portador Jérémie Grodziski possui o cartão nº 1234 5678 9012 3456 em EUR e um débito de 0 EUR associado à conta bancária 300003 03594 00051524344 12 com um saldo de 1000 € no banco Société Générale
+Dado que o serviço ExchangeService é inicializado com a taxa do dia de 0,82 para EUR-CHF
+Quando o portador realiza um pagamento de 100 CHF em um comerciante
+Então as taxas calculadas são de 1,23 EUR (ver Taxas)
+Então o débito do cartão é de 83,23 EUR
+
+Cenário: pagamento - sucesso
+
+Dado que o portador Jérémie Grodziski possui o cartão nº 1234 5678 9012 3456 em GBP e um débito de 0 GBP associado à conta bancária 300003 03594 00051524344 12 com um saldo de 1000 € no banco Barclays
+Dado que o serviço ExchangeServiceCHF-EUR é inicializado com a taxa do dia de 0,82 para EUR-CHF
+Dado que o serviço ExchangeServiceGBP-EUR é inicializado com a taxa do dia de 1,26 para EUR-GBP
+Quando o portador realiza um pagamento de 100 CHF em um comerciante
+Então as taxas calculadas são de 1,23 GBP (ver Taxas)
+Então o débito do cartão é de 83,23 GBP

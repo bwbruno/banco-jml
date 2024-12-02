@@ -5,6 +5,7 @@ import br.ufrn.bancojml.dominio.Pagamento;
 import java.util.Set;
 
 /**
+ * Created by jeremiegrodziski
  *
  */
 public class Fatura {

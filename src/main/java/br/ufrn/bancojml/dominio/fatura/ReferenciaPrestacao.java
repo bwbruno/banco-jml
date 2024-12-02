@@ -1,7 +1,7 @@
 package br.ufrn.bancojml.dominio.fatura;
 
 /**
- *
+ * Created by jeremiegrodziski
  */
 public class ReferenciaPrestacao {
     private String ref;

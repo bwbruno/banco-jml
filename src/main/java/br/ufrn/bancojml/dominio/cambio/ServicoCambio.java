@@ -5,6 +5,7 @@ import java.util.Currency;
 import java.util.List;
 
 /**
+ * Created by jeremiegrodziski
  *
  */
 public interface ServicoCambio {

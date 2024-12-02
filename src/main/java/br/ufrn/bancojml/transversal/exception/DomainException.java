@@ -1,7 +1,7 @@
 package br.ufrn.bancojml.transversal.exception;
 
 /**
- *
+ * Created by jeremiegrodziski
  */
 public class DomainException extends BaseException {
     private static final long serialVersionUID = 6413485124943479155L;

@@ -1,0 +1,17 @@
+Como gerente,
+
+Dado que o cliente Danone (SIRET: 55203253400646) existe
+Quando crio o seu pedido de sobrenome: “Produtos frescos da região de Limousin todos os meses” (parâmetros, suporte, formato, etc.) parâmetros obrigatórios: tipo de produto, frequência, etc.
+Então o comando é CREETED com um identificador gerado
+Quando eu valido o pedido
+Então o pedido é validado
+Quando emito uma cotação de 13.500€ por ano
+Em seguida, a cotação é emitida e anexada ao pedido
+Quando recebo aceitação do cliente
+Então a cotação é aceita
+Quando eu anexo este pedido a um contrato cujo número de licença é nº 123ZX e a data efetiva é 07/04/2012
+Então o contrato é lançado
+Portanto o contrato tem vigência em 07/04/2012
+Então o contrato tem duração de 4 anos
+Então o contrato tem faturamento anual na data de aniversário
+Então o contrato tem entregas mensais desmaterializadas

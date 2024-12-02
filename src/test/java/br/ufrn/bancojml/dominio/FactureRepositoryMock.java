@@ -12,7 +12,7 @@ import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
 /**
- *
+ * Created by jeremiegrodziski
  */
 public class FactureRepositoryMock {
 

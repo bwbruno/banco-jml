@@ -10,7 +10,7 @@ import org.jbehave.core.annotations.When;
 import org.springframework.util.Assert;
 
 /**
- *
+ * Created by jeremiegrodziski
  */
 public class FactureSteps {
     RepositorioFatura repositorioFatura = FactureRepositoryMock.getInstance();

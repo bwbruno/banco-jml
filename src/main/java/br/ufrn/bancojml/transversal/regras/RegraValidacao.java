@@ -1,7 +1,7 @@
 package br.ufrn.bancojml.transversal.regras;
 
 /**
- *
+ * Created by jeremiegrodziski
  */
 public interface RegraValidacao {
 

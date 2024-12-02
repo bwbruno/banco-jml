@@ -5,6 +5,7 @@ import java.util.Currency;
 import java.util.Date;
 
 /**
+ * Created by jeremiegrodziski
  *
  */
 public class CotacaoDTO {
