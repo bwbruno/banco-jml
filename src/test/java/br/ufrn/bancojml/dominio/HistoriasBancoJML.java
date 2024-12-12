@@ -38,26 +38,33 @@ public class HistoriasBancoJML extends JUnitStories {
         return new MostUsefulConfiguration()
                 .useKeywords(ptbrKeywords)
                 .useStoryLoader(new LoadFromClasspath(classLoader))
-                .useStoryReporterBuilder(new StoryReporterBuilder()
-                        .withCodeLocation(codeLocation)
-                        .withPathResolver(new FilePrintStreamFactory.ResolveToSimpleName())
-                        .withDefaultFormats()
-                        .withFormats(CONSOLE, TXT, HTML, XML)
-                        .withFailureTrace(true)
-                        .withViewResources(properties)
-                        .withKeywords(ptbrKeywords)
-                        )
+                .useStoryReporterBuilder(
+                    new StoryReporterBuilder()
+                            .withCodeLocation(codeLocation)
+                            .withPathResolver(new FilePrintStreamFactory.ResolveToSimpleName())
+                            .withDefaultFormats()
+                            .withFormats(CONSOLE, TXT, HTML, XML)
+                            .withFailureTrace(true)
+                            .withViewResources(properties)
+                            .withKeywords(ptbrKeywords)
+                )
                 .useFailureStrategy(new RethrowingFailure())
                 .useStepdocReporter(new PrintStreamStepdocReporter());
     }
 
     public InjectableStepsFactory stepsFactory() {
-        return new InstanceStepsFactory(configuration(),
-                new PassosCartaoDeCredito());
+        return new InstanceStepsFactory(
+                        configuration(),
+                        new PassosCartaoDeCredito()
+                );
     }
 
     public List<CandidateSteps> candidateSteps() {
-        return new InstanceStepsFactory(configuration(), new CreditCardSteps(), new FactureSteps())
+        return new InstanceStepsFactory(
+                    configuration(),
+                    new PassosCartaoDeCredito(),
+                    new PassosFatura()
+                )
                 .createCandidateSteps();
     }
 

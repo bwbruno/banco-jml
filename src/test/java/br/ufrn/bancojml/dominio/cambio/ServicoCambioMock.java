@@ -13,7 +13,7 @@ import static org.mockito.Mockito.when;
 /**
  * Created by jeremiegrodziski
  */
-public class ExchangeServiceMock {
+public class ServicoCambioMock {
     private static final List<CotacaoDTO> LIST =  new ArrayList<>(365);
 
     public static ServicoCambio getInstance(double currentRate) {

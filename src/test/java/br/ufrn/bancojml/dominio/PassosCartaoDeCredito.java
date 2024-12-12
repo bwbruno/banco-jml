@@ -1,7 +1,7 @@
 package br.ufrn.bancojml.dominio;
 
 import br.ufrn.bancojml.dominio.cambio.CotacaoDTO;
-import br.ufrn.bancojml.dominio.cambio.ExchangeServiceMock;
+import br.ufrn.bancojml.dominio.cambio.ServicoCambioMock;
 import br.ufrn.bancojml.dominio.cambio.ServicoCambio;
 import junit.framework.Assert;
 import org.jbehave.core.annotations.*;
@@ -81,7 +81,7 @@ public class PassosCartaoDeCredito {
     @Given("o servico ExchangeService esta inicializado com a taxa do dia $taux para EUR-CHF")
     @Pending
     public void givenOServicoExchangeServiceEstaInicializado(double taxa) {
-        servicoCambio = ExchangeServiceMock.getInstance(taxa);
+        servicoCambio = ServicoCambioMock.getInstance(taxa);
     }
 
     @When("o titular realiza um pagamento no comerciante $commercant de $montant $devisePaiementString")

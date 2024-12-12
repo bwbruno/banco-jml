@@ -14,7 +14,7 @@ import static org.mockito.Mockito.when;
 /**
  * Created by jeremiegrodziski
  */
-public class FactureRepositoryMock {
+public class RepositorioFaturaMock {
 
     static {
         LinhaFatura ligne = new LinhaFatura();
