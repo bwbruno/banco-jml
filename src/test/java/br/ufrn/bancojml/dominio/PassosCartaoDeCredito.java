@@ -24,20 +24,21 @@ public class PassosCartaoDeCredito {
     ServicoCambio servicoCambio;
     private Pagamento pagamento;
 
-    @Given("o titular $nome $sobrenome possui o cartão nº $numeroCartao em $moedaCartao e um débito de $debito $moedaCartao associado à conta bancária $numeroConta com um saldo de $saldo € no banco $nomeBanco")
+    @Given("o titular $nome $sobrenome ($cpf) possui o cartão nº $numeroCartao em $moedaCartao e um débito de $debito $moedaCartao associado à conta bancária $numeroConta com um saldo de $saldo € no banco $nomeBanco")
     public void givenOtitularPossuiOCartao(@Named("nome") String nome,
                                            @Named("sobrenome") String sobrenome,
+                                           @Named("cpf") String cpf,
                                            @Named("numeroCartao") String numeroCartao,
                                            @Named("moedaCartao") String moedaCartao,
                                            @Named("debito") Integer debito,
                                            @Named("numeroConta") String numeroConta,
                                            @Named("saldo") Integer saldo,
                                            @Named("nomeBanco") String nomeBanco) {
-        titular = new Titular(nome, sobrenome);
+        titular = new Titular(nome, sobrenome, cpf);
         conta = new Conta(new Montante(saldo),numeroConta);
         long doisAnosDepois = System.currentTimeMillis()+(1000*60*60*24*365*2);
         cartao = new Cartao( new NumeroCartao(numeroCartao), new Date(doisAnosDepois),nome + " " + sobrenome, conta);
-        banco = new Banco(nomeBanco);
+        banco = new Banco(nomeBanco, "001");
         re = null;
         caixaEletronico = null;
         retirada = null;
